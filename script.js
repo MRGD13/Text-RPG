@@ -75,7 +75,20 @@ const locations = [
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
     "button functions": [restart, restart, restart],
     text: "You die. &#x2620;"
+  },
+  {
+  name: "win", 
+  "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
+  "button functions": [restart, restart, restart], 
+  text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;" 
+  },
+  {
+  name: "easter egg",
+  "button text": ["2", "8", "Go to town square?"],
+  "button functions": [pickTwo, pickEight, goTown],
+  text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
   }
+
 
 ];
 
@@ -205,6 +218,9 @@ function goTown() {
   function lose() {
     update(locations[5]);
   }
+  function winGame() {
+    update(locations[6]);
+  }
   
   function restart() {
     xp = 0;
@@ -217,4 +233,3 @@ function goTown() {
     xpText.innerText = xp;
     goTown();
   }
-  
